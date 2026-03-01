@@ -18,4 +18,4 @@
 </script>
 
 <DesktopMenu {items} {defaultActive} />
-<MobileMenu {items} {defaultActive} />
+<MobileMenu {items} {defaultActive}/>
