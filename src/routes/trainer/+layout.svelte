@@ -8,14 +8,26 @@
         <Sidebar
             defaultActive="Dashboard"
             items={[
-                { name: 'Dashboard', icon: 'dashboard', href: '/dashboard' },
-                { name: 'Clients', icon: 'group', href: '/clients' },
-                { name: 'Profile', icon: 'account_circle', href: '/profile' },
-                { name: 'Settings', icon: 'settings', href: '/settings' },
+                {
+                    name: "Dashboard",
+                    icon: "space_dashboard",
+                    href: "/trainer/dashboard",
+                },
+                { name: "Clients", icon: "group", href: "/trainer/clients" },
+                {
+                    name: "Profile",
+                    icon: "account_circle",
+                    href: "/trainer/profile",
+                },
+                {
+                    name: "Settings",
+                    icon: "settings",
+                    href: "/trainer/settings",
+                },
             ]}
         />
-    <main class="flex-1 overflow-y-auto pt-6 px-6 pb-20 md:pb-0">
-        {@render children()}
-    </main>
+        <main class="flex-1 overflow-y-auto pt-6 px-6 pb-20 md:pb-0">
+            {@render children()}
+        </main>
     </div>
 </div>

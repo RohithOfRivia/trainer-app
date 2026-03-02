@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { page } from "$app/state";
+
     interface MenuItem {
         name: string;
         icon: string;
@@ -10,23 +12,17 @@
         defaultActive?: string;
     }
 
-    let { items, defaultActive = '' }: Props = $props();
-    let activeItem = $state(defaultActive);
-
-    function onMenuItemClick(name: string, href: string) {
-        activeItem = name;
-        window.location.href = href;
-    }
+    let { items, defaultActive = "" }: Props = $props();
 </script>
 
 <div class="dock dock-md md:hidden">
     {#each items as menuItem}
-        <button
-            class={activeItem === menuItem.name ? 'dock-active' : ''}
-            onclick={() => onMenuItemClick(menuItem.name, menuItem.href)}
+        <a
+            href={menuItem.href}
+            class={page.url.pathname === menuItem.href ? "dock-active" : ""}
         >
             <span class="material-symbols-outlined">{menuItem.icon}</span>
             <span class="dock-label">{menuItem.name}</span>
-        </button>
+        </a>
     {/each}
 </div>

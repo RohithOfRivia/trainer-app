@@ -1,4 +1,20 @@
 @import "tailwindcss";
+
+@layer base {
+    h1 {
+        @apply text-4xl font-extrabold text-base-content mb-6;
+    }
+    h2 {
+        @apply text-3xl font-bold text-base-content mb-4;
+    }
+    h3 {
+        @apply text-2xl font-semibold text-base-content mb-3;
+    }
+    h4 {
+        @apply text-xl font-medium text-base-content mb-2;
+    }
+}
+
 @plugin "daisyui" {
   themes: light --default, sunset --prefersdark;
   root: ":root";

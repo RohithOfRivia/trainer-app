@@ -1,7 +1,7 @@
 <!-- Sidebar.svelte -->
 <script lang="ts">
-    import DesktopMenu from './DesktopMenu.svelte';
-    import MobileMenu from './MobileMenu.svelte';
+    import DesktopMenu from "./DesktopMenu.svelte";
+    import MobileMenu from "./MobileMenu.svelte";
 
     interface MenuItem {
         name: string;
@@ -14,8 +14,8 @@
         defaultActive?: string;
     }
 
-    let { items, defaultActive = '' }: Props = $props();
+    let { items, defaultActive = "" }: Props = $props();
 </script>
 
 <DesktopMenu {items} {defaultActive} />
-<MobileMenu {items} {defaultActive}/>
+<MobileMenu {items} {defaultActive} />
