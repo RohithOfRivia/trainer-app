@@ -1,5 +1,6 @@
 <script lang="ts">
     import { page } from "$app/state";
+    import Icon from "../Icon.svelte";
 
     interface MenuItem {
         name: string;
@@ -32,9 +33,7 @@
                 class="flex items-center p-2 rounded-full hover:bg-base-content/10 gap-2"
                 onclick={onNavbarClick}
             >
-                <span class="material-symbols-outlined shrink-0 text-center"
-                    >menu</span
-                >
+                <Icon name="menu" />
             </button>
         </li>
         {#each items as menuItem}

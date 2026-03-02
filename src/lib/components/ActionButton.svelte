@@ -1,4 +1,6 @@
 <script lang="ts">
+    import Icon from "./Icon.svelte";
+
     interface Props {
         label: string;
         icon?: string;
@@ -13,7 +15,7 @@
 
 <button class="btn {color} {className} {fullWidth ? 'w-full' : ''}" {onclick}>
     {#if icon}
-        <span class="material-symbols-outlined">{icon}</span>
+        <Icon name={icon}/>
     {/if}
     {label}
 </button>
