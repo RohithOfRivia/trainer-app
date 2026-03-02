@@ -1,6 +1,7 @@
 <script lang="ts">
-    import ActionButton from "../ActionButton.svelte";
-    import Badge from "../Badge.svelte";
+    import AvatarPlaceholder from "$lib/components/AvatarPlaceholder.svelte";
+import ActionButton from "../../ActionButton.svelte";
+    import Badge from "../../Badge.svelte";
 
 
     interface Props {
@@ -22,14 +23,10 @@
 
     <!-- Row 1: Avatar + Name + Since -->
     <div class="flex items-center gap-3">
-        <div class="avatar placeholder">
-            <div class="bg-neutral text-neutral-content rounded-full w-12 flex items-center justify-center">
-                <span class="text-lg">{name[0]}</span>
-            </div>
-        </div>
+        <AvatarPlaceholder name="aaaaa"/>
         <div class="flex flex-col">
             <span class="font-semibold">{name}</span>
-            <span class="text-xs text-base-content/50">Since {sinceMonth} {sinceYear}</span>
+            <span class="text-xs text-base-content/50">Sinasdsadce {sinceMonth} {sinceYear}</span>
         </div>
     </div>
 
@@ -41,7 +38,7 @@
     <!-- Row 3: Last workout + Total sessions -->
     <div class="flex justify-between text-sm">
         <div class="flex flex-col">
-            <span class="text-base-content/50 text-xs">Last Workout</span>
+            <span class="text-base-content/50 text-xs">Last Session</span>
             <span>{lastWorkout}</span>
         </div>
         <div class="flex flex-col items-end">
@@ -52,5 +49,5 @@
 
     <!-- Row 4: View client button -->
     <ActionButton label="View Client" icon="person" color="btn-soft btn-accent btn-sm" fullWidth={true} onclick={() => window.location.href = href} />
-
+        
 </div>

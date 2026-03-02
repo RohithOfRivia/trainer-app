@@ -1,6 +1,6 @@
 <script>
     import TextInput from "$lib/components/TextInput.svelte";
-    import ClientCard from "$lib/components/TrainerClients/ClientCard.svelte";
+    import ClientCard from "$lib/components/Trainer/Clients/ClientCard.svelte";
 </script>
 
 <div class="flex flex-col gap-3">
