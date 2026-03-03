@@ -13,7 +13,7 @@
     let { time, clientName, sessionType, duration }: Props = $props();
 </script>
 
-<div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 rounded-4xl bg-base-200 p-4 sm:border-l-4 sm:border-primary">
+<div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 rounded-4xl bg-base-200 p-4 sm:border sm:border-base-content/5">
     <div class="font-bold sm:border-r border-base-content/50 sm:pr-4">
         <div class="flex items-center sm:justify-center gap-2">
             <Icon name="schedule" /> {time}

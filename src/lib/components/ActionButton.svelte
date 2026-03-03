@@ -2,7 +2,7 @@
     import Icon from "./Icon.svelte";
 
     interface Props {
-        label: string;
+        label?: string;
         icon?: string;
         color?: string;
         onclick?: () => void;
@@ -17,5 +17,5 @@
     {#if icon}
         <Icon name={icon}/>
     {/if}
-    {label}
+    {#if label}{label}{/if}
 </button>

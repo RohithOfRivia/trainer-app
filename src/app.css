@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@theme {
+    /* Uses theme's text color (--bc) at 30% opacity */
+    --color-border-dark: oklch(var(--bc) / 0.3); 
+}
+
+@utility borders-strong {
+    @apply border border-border-dark;
+}
+
 @layer base {
     h1 {
         @apply text-4xl font-extrabold text-base-content mb-6;
@@ -16,7 +25,7 @@
 }
 
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark;
+  themes: light --default, light --prefersdark;
   root: ":root";
   include: ;
   exclude: ;

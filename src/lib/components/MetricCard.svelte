@@ -10,7 +10,7 @@
     let { title, value, icon, desc, trend }: Props = $props();
 </script>
 
-<div class="stat bg-base-200 rounded-3xl flex-1">
+<div class="stat bg-base-200 rounded-3xl flex-1 border-none">
     {#if icon}
         <div class="stat-figure text-primary">
             <span class="material-symbols-outlined text-4xl">{icon}</span>

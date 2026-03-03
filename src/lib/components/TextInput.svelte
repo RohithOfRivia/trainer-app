@@ -4,8 +4,8 @@
         label?: string;
         helperText?: string;
         style?: string;
-        type?: "text" | "email" | "password" | "number"; 
-        value?: string;
+        type?: "text" | "email" | "password" | "number" | "date";
+        value?: string | number;
     }
 
     let { 
