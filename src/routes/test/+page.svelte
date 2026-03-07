@@ -1,5 +1,6 @@
 <script>
     import MobileSliderPanel from "$lib/components/MobileSliderPanel.svelte";
+    import Modal from "$lib/components/Modal.svelte";
     import WorkoutEntry from "$lib/components/Trainer/WorkoutEntry.svelte";
 
     let isLogging = $state(false);
@@ -17,6 +18,7 @@
 
 <button class="btn btn-primary" onclick={() => isLogging = true}>Log Workout</button>
 
-<MobileSliderPanel bind:isOpen={isLogging} title="Log Workout">
+<Modal bind:isOpen={isLogging} title="Log Workout">
     <WorkoutEntry bind:workout />
-</MobileSliderPanel>
+</Modal>
+

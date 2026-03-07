@@ -1,14 +1,23 @@
 <script>
     import ActionButton from "$lib/components/ActionButton.svelte";
-    import AvatarPlaceholder from "$lib/components/AvatarPlaceholder.svelte";
-    import Badge from "$lib/components/Badge.svelte";
     import MetricCard from "$lib/components/MetricCard.svelte";
+    import Modal from "$lib/components/Modal.svelte";
     import ScheduleCard from "$lib/components/Trainer/Dashboard/ScheduleCard.svelte";
+    import WorkoutEntry from "$lib/components/Trainer/WorkoutEntry.svelte";
+
+    let isLogging = $state(false);
+    let workout = $state({
+        clientName: "",
+        date: new Date().toISOString().split("T")[0],
+        notes: "",
+        exercises: [{ id: 1, name: "", sets: 3, reps: 10, weight: 0 }],
+    });
 
     let sessions = [
         { time: "7:00 AM", clientName: "Client Name", sessionType: "Strength Training", duration: "60min" },
         { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" }
     ];
+    
 </script>
 
 <div class="flex flex-col gap-2">
@@ -39,12 +48,7 @@
     <div class="flex flex-col gap-3">
         <div class="flex justify-between items-center">
             <h3>Today's Schedule</h3>
-            <ActionButton
-                label="Add Session"
-                icon="add"
-                color="btn-accent"
-                className="rounded-2xl"
-            />
+            <ActionButton label="Add Session" icon="add" color="btn-accent" className="rounded-2xl" onclick={() => isLogging = true} />
         </div>
 
         <div class="flex flex-col gap-3">
@@ -59,3 +63,8 @@
     </div>
     </div>
 </div>
+
+
+<Modal bind:isOpen={isLogging} title="Log Workout">
+    <WorkoutEntry bind:workout />
+</Modal>
