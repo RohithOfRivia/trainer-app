@@ -1,4 +1,5 @@
 <script lang="ts">
+    import type { Snippet } from "svelte";
     import Icon from "./Icon.svelte";
 
     interface Props {
@@ -8,9 +9,10 @@
         onclick?: () => void;
         fullWidth?: boolean;
         className?: string;
+        children?: Snippet;
     }
 
-    let { label, icon, color = 'btn-primary', onclick, fullWidth = false, className = '' }: Props = $props();
+    let { label, icon, color = 'btn-primary', onclick, fullWidth = false, className = '', children }: Props = $props();
 </script>
 
 <button class="btn {color} {className} {fullWidth ? 'w-full' : ''}" {onclick}>
@@ -18,4 +20,7 @@
         <Icon name={icon}/>
     {/if}
     {#if label}{label}{/if}
+    {#if children}
+        {@render children()}
+    {/if}
 </button>

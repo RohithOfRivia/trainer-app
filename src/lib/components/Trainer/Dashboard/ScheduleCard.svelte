@@ -2,19 +2,34 @@
     import AvatarPlaceholder from '$lib/components/AvatarPlaceholder.svelte';
     import Badge from '$lib/components/Badge.svelte';
     import Icon from '$lib/components/Icon.svelte';
+    import Dropdown from '$lib/components/Input/Dropdown.svelte';
+    import MobileOptionsPanel from '$lib/components/Input/MobileOptionsPanel.svelte';
 
     interface Props {
+        id: string;
         time: string;
         clientName: string;
         sessionType: string;
         duration: string;
     }
 
-    let { time, clientName, sessionType, duration }: Props = $props();
+    let { id, time, clientName, sessionType, duration }: Props = $props();
+
+    const dummyOptions = [
+        { label: 'Edit Session', value: 'edit' },
+        { label: 'Reschedule', value: 'reschedule' },
+        { label: 'Cancel', value: 'cancel' }
+    ];
+
+    let isMobileMenuOpen = $state(false);
+
+    function handleOptionSelect(option: { label: string; value: string | number }) {
+        console.log(option.value);
+    }
 </script>
 
-<div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 rounded-4xl bg-base-200 p-4 sm:border sm:border-base-content/5">
-    <div class="font-bold sm:border-r border-base-content/50 sm:pr-4">
+<div class="relative flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 rounded-4xl bg-base-200 p-4 sm:border sm:border-base-content/5">
+    <div class="font-bold sm:border-r border-base-content/50 sm:pr-4 pr-10">
         <div class="flex items-center sm:justify-center gap-2">
             <Icon name="schedule" /> {time}
         </div>
@@ -30,8 +45,25 @@
 
     <div class="flex gap-2 items-center sm:justify-end w-full sm:w-auto sm:ml-auto sm:mt-0 pt-3 sm:pt-0">
         <Badge label={duration} style="badge-outline badge-accent" icon="timer" />
-        <button class="btn btn-ghost btn-sm btn-circle ml-auto sm:ml-0" title="Options">
-            <Icon name="more_vert" />
-        </button>
+        <div class="hidden sm:block sm:ml-0">
+            <Dropdown 
+                id={id} 
+                options={dummyOptions} 
+                onSelect={handleOptionSelect} 
+            />
+        </div>
+
+        <div class="absolute top-4 right-4 sm:hidden">
+            <button class="btn btn-ghost btn-sm btn-circle" onclick={() => isMobileMenuOpen = true} title="Options">
+                <Icon name="more_vert" />
+            </button>
+        </div>
     </div>
 </div>
+
+<MobileOptionsPanel 
+    bind:isOpen={isMobileMenuOpen} 
+    title="Session Options" 
+    options={dummyOptions}
+    onSelect={handleOptionSelect}
+/>

@@ -15,8 +15,60 @@
 
     let sessions = [
         { time: "7:00 AM", clientName: "Client Name", sessionType: "Strength Training", duration: "60min" },
-        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" }
-    ];
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        { time: "8:00 AM", clientName: "Client Name", sessionType: "S&C Training", duration: "20min" },
+        
+    ];  
     
 </script>
 
@@ -52,8 +104,9 @@
         </div>
 
         <div class="flex flex-col gap-3">
-        {#each sessions as session}
+        {#each sessions as session, index}
             <ScheduleCard 
+                id={index.toString()}
                 time={session.time} 
                 clientName={session.clientName} 
                 sessionType={session.sessionType} 
