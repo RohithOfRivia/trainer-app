@@ -178,7 +178,7 @@
                         <span class="text-base-content/50">·</span>
                         <label class="relative flex items-center gap-1 cursor-pointer group">
                             <span class="text-base-content/60 group-hover:text-base-content transition-colors">{dateInfo.display}</span>
-                            <Icon name="edit" className="text-[12px] text-base-content/50 group-hover:text-base-content" />
+                            <span class="material-symbols-outlined" style="font-size: 12px;">edit</span>
                             <input type="date" class="absolute inset-0 opacity-0 cursor-pointer w-full" bind:value={workout.date} />
                         </label>
                     </div>
@@ -187,7 +187,6 @@
         </div>
         <div class="flex gap-1 pt-1 shrink-0">
             <ActionButton icon="keyboard_double_arrow_up" color="btn-ghost" className="btn-sm btn-circle text-base-content/60 hover:text-primary hover:bg-base-content/10 border-none" onclick={() => toggleAll(false)} />
-            <ActionButton icon="keyboard_double_arrow_down" color="btn-ghost" className="btn-sm btn-circle text-base-content/60 hover:text-primary hover:bg-base-content/10 border-none" onclick={() => toggleAll(true)} />
         </div>
     </header>
 
