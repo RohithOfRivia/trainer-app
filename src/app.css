@@ -3,6 +3,10 @@
 @theme {
     /* Uses theme's text color (--bc) at 30% opacity */
     --color-border-dark: oklch(var(--bc) / 0.3); 
+
+    --breakpoint-xs: 30rem;
+    --breakpoint-2xs: 20rem;
+    
 }
 
 @utility borders-strong {
