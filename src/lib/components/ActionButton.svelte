@@ -12,7 +12,7 @@
         children?: Snippet;
     }
 
-    let { label, icon, color = 'btn-primary', onclick, fullWidth = false, className = '', children }: Props = $props();
+    let { label, icon, color = '', onclick, fullWidth = false, className = '', children }: Props = $props();
 </script>
 
 <button class="btn {color} {className} {fullWidth ? 'w-full' : ''}" {onclick}>

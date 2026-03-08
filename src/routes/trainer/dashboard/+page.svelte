@@ -110,7 +110,7 @@
                 time={session.time} 
                 clientName={session.clientName} 
                 sessionType={session.sessionType} 
-                duration={session.duration} 
+                duration={session.duration}
             />
         {/each}
     </div>

@@ -28,10 +28,15 @@
     }
 </script>
 
-<div class="relative flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 rounded-4xl bg-base-200 p-4 sm:border sm:border-base-content/5">
+<div class="relative flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 rounded-4xl bg-base-200 p-4 sm:border sm:border-base-content/5 hover:bg-base-200/50 transition-colors">
+    
+    <a href="/trainer/dashboard/1" class="absolute inset-0 z-0 rounded-4xl">
+        <span class="sr-only">View Session Details</span>
+    </a>
+
     <div class="font-bold sm:border-r border-base-content/50 sm:pr-4 pr-10">
-        <div class="flex items-center sm:justify-center gap-2">
-            <Icon name="schedule" /> {time}
+        <div class="flex items-center sm:justify-center gap-2 text-base-content/70">
+            <Icon name="schedule"/>{time}
         </div>
     </div>
 
@@ -45,15 +50,16 @@
 
     <div class="flex gap-2 items-center sm:justify-end w-full sm:w-auto sm:ml-auto sm:mt-0 pt-3 sm:pt-0">
         <Badge label={duration} style="badge-outline badge-accent" icon="timer" />
-        <div class="hidden sm:block sm:ml-0">
+        
+        <div class="hidden sm:block sm:ml-0 relative z-10">
             <Dropdown 
                 id={id} 
                 options={dummyOptions} 
-                onSelect={handleOptionSelect} 
+                onSelect={handleOptionSelect}
             />
         </div>
 
-        <div class="absolute top-4 right-4 sm:hidden">
+        <div class="absolute top-4 right-4 sm:hidden z-10">
             <button class="btn btn-ghost btn-sm btn-circle" onclick={() => isMobileMenuOpen = true} title="Options">
                 <Icon name="more_vert" />
             </button>
