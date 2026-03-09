@@ -15,7 +15,7 @@
     let { items, defaultActive = "" }: Props = $props();
 </script>
 
-<div class="dock dock-md md:hidden">
+<div class="dock dock-md md:hidden z-10">
     {#each items as menuItem}
         <a
             href={menuItem.href}

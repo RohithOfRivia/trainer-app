@@ -12,5 +12,5 @@
     {#if icon}
         <span class="material-symbols-outlined shrink-0" style="font-size: 12px;">{icon}</span>
     {/if}
-    <span class="leading-tight">{label}</span>
+    <span class="">{label}</span>
 </span>

@@ -37,7 +37,7 @@
     <div role="tabpanel" class="mt-4">
         {#each tabs as tab}
             {#if activeTab === tab.id}
-                <div class="bg-base-300 p-10 rounded-2xl">
+                <div class="bg-base-300 p-5 rounded-2xl">
                     {@render tab.content()}
                 </div>
             {/if}

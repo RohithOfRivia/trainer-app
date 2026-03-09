@@ -59,7 +59,7 @@
             />
         </div>
 
-        <div class="absolute top-4 right-4 sm:hidden z-10">
+        <div class="absolute top-4 right-4 sm:hidden z-1">
             <button class="btn btn-ghost btn-sm btn-circle" onclick={() => isMobileMenuOpen = true} title="Options">
                 <Icon name="more_vert" />
             </button>

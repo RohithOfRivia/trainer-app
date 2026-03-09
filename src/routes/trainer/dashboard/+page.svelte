@@ -100,7 +100,7 @@
     <div class="flex flex-col gap-3">
         <div class="flex justify-between items-center">
             <h3>Today's Schedule</h3>
-            <ActionButton label="Add Session" icon="add" color="btn-accent" className="rounded-2xl" onclick={() => isLogging = true} />
+            <ActionButton label="Add Session" icon="add" color="btn-accent" className="rounded-2xl shadow-none" onclick={() => isLogging = true} />
         </div>
 
         <div class="flex flex-col gap-3">
