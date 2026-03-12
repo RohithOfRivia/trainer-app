@@ -23,7 +23,7 @@
 </script>
 
 <aside
-    class="hidden md:flex flex-col items-center h-screen sticky top-0 overflow-y-auto space-y-4 py-6 px-2 bg-base-300
+    class="hidden md:flex flex-col items-center h-screen sticky top-0 overflow-y-auto space-y-4 py-6 px-2 bg-base-200/80
     transition-[width] duration-200
     {navbarOpen ? 'w-56' : 'w-14'}"
 >
@@ -33,7 +33,7 @@
                 class="flex items-center p-2 rounded-full hover:bg-base-content/10 gap-2"
                 onclick={onNavbarClick}
             >
-                <Icon name="menu" />
+                <Icon name="menu" className=""/>
             </button>
         </li>
         {#each items as menuItem}
@@ -45,9 +45,7 @@
                         ? 'bg-base-content/20'
                         : 'hover:bg-base-content/10'}"
                 >
-                    <span class="material-symbols-outlined"
-                        >{menuItem.icon}</span
-                    >
+                    <Icon name={menuItem.icon} className="text-base-content/90" />
 
                     {#if navbarOpen}
                         <div>{menuItem.name}</div>

@@ -12,7 +12,7 @@
         placeholder = "", 
         label, 
         helperText, 
-        style = "", 
+        style = "input-sm", 
         type = "text",
         value = $bindable()
     }: Props = $props();

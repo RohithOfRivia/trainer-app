@@ -21,7 +21,7 @@
     <div class="stat-value">{value}</div>
 
     {#if trend !== undefined}
-        <div class="stat-desc flex items-center gap-1 {trend >= 0 ? 'text-success' : 'text-error'}">
+        <div class="stat-desc flex items-center gap-1 {trend >= 0 ? 'text-success/80' : 'text-error'}">
             <span class="material-symbols-outlined text-sm">
                 {trend >= 0 ? 'trending_up' : 'trending_down'}
             </span>

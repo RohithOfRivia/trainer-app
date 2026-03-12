@@ -34,7 +34,7 @@
     }
 </script>
 
-<label class="input {style} flex items-center gap-2 pr-3">
+<label class="input input-sm {style} flex items-center gap-2 pr-3">
     <input
         bind:this={inputElement}
         type={inputType}

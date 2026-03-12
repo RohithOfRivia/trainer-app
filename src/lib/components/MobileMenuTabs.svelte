@@ -6,16 +6,16 @@
         id: string;
         label: string;
         icon?: string;
-        content: Snippet;
     }
 
     interface Props {
         tabs: Tab[];
-        activeTab?: string;
+        activeTab: string;
         className?: string;
+        children?: Snippet;
     }
 
-    let { tabs, activeTab = $bindable(tabs[0]?.id), className = "" }: Props = $props();
+    let { tabs, activeTab = $bindable(), className = "", children }: Props = $props();
 </script>
 
 <div class="flex flex-col w-full {className}">
@@ -34,13 +34,7 @@
         {/each}
     </div>
 
-    <div role="tabpanel" class="mt-4">
-        {#each tabs as tab}
-            {#if activeTab === tab.id}
-                <div class="bg-base-300 p-5 rounded-2xl">
-                    {@render tab.content()}
-                </div>
-            {/if}
-        {/each}
+    <div role="tabpanel" class="mt-4 bg-base-300 p-5 rounded-2xl">
+        {@render children?.()}
     </div>
 </div>

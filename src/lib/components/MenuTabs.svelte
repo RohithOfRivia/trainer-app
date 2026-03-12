@@ -2,34 +2,34 @@
     import type { Snippet } from "svelte";
 
     interface Tab {
+        id: string;
         label: string;
-        content: Snippet;
     }
 
     interface Props {
         tabs: Tab[];
-        name?: string;
+        activeTab: string;
         className?: string;
+        children?: Snippet;
     }
 
-    let { 
-        tabs, 
-        name = "desktop_tabs_" + Math.random().toString(36).slice(2), 
-        className = "" 
-    }: Props = $props();
+    let { tabs, activeTab = $bindable(), className = "", children }: Props = $props();
 </script>
 
-<div class="tabs bg-base-100 tabs-border flex {className}">
-    {#each tabs as tab, i}
-        <input
-            type="radio"
-            name={name}
-            class="tab"
-            aria-label={tab.label}
-            checked={i === 0}
-        />
-        <div class="tab-content bg-base-300 p-10">
-            {@render tab.content()}
-        </div>
-    {/each}
+<div class="flex flex-col w-full {className}">
+    <div role="tablist" class="tabs tabs-border pb-5">
+        {#each tabs as tab}
+            <button
+                role="tab"
+                class="tab {activeTab === tab.id ? 'tab-active' : ''}"
+                onclick={() => (activeTab = tab.id)}
+            >
+                {tab.label}
+            </button>
+        {/each}
+    </div>
+
+    <div role="tabpanel" class="mt-[-1px] rounded-b-box rounded-tr-box">
+        {@render children?.()}
+    </div>
 </div>
