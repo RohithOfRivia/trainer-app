@@ -1,6 +1,13 @@
 <script lang="ts">
+    import { afterNavigate } from "$app/navigation";
     import Sidebar from "$lib/components/Navigation/Sidebar.svelte";
     let { children } = $props();
+
+    let mainContainer = $state<HTMLElement | undefined>(undefined);
+
+    afterNavigate(() => {
+        mainContainer?.scrollTo(0, 0);
+    });
 </script>
 
 <div class="flex flex-col h-screen">
@@ -26,7 +33,10 @@
                 },
             ]}
         />
-        <main class="flex-1 overflow-y-auto pt-6 px-6 pb-20 md:pb-0">
+        <main 
+            bind:this={mainContainer} 
+            class="flex-1 overflow-y-auto pt-6 px-6 pb-20 md:pb-0"
+        >
             {@render children()}
         </main>
     </div>
