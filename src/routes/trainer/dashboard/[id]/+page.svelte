@@ -6,6 +6,7 @@
     import MenuTabs from "$lib/components/MenuTabs.svelte";
     import MobileMenuTabs from "$lib/components/MobileMenuTabs.svelte";
     import MealHistory from "$lib/components/Trainer/Clients/MealHistory.svelte";
+    import WorkoutHistory from "$lib/components/Trainer/Clients/WorkoutHistory.svelte";
 
     let activeTab = $state("past-meals");
 
@@ -19,7 +20,7 @@
     {#if activeTab === "past-meals"}
         <MealHistory />
     {:else if activeTab === "past-workouts"}
-        <div class="flex flex-col gap-2">Content: Recent Workouts</div>
+        <WorkoutHistory />
     {/if}
 {/snippet}
 
