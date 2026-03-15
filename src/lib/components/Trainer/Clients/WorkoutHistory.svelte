@@ -39,10 +39,19 @@
                     ],
                 },
                 {
-                    name: "Push Day",
+                    name: "Push dasdas asdsadsadasasdsd fdsf sdDay",
                     date: "26 May 2025",
                     status: "Completed",
                     exercises: [
+                        {
+                            name: "Bench sadfadsfs sdf sdafdsfsdafasdfdPress",
+                            sets: [
+                                { weight: "80 kg", reps: "8 reps" },
+                                { weight: "80 kg", reps: "8 reps" },
+                                { weight: "80 kg", reps: "8 reps" },
+                            ],
+                            
+                        },
                         {
                             name: "Bench Press",
                             sets: [
@@ -50,6 +59,43 @@
                                 { weight: "80 kg", reps: "8 reps" },
                                 { weight: "80 kg", reps: "8 reps" },
                             ],
+                            
+                        },
+                        {
+                            name: "Bench Press",
+                            sets: [
+                                { weight: "80 kg", reps: "8 reps" },
+                                { weight: "80 kg", reps: "8 reps" },
+                                { weight: "80 kg", reps: "8 reps" },
+                            ],
+                            
+                        },
+                        {
+                            name: "Bench Press",
+                            sets: [
+                                { weight: "80 kg", reps: "8 reps" },
+                                { weight: "80 kg", reps: "8 reps" },
+                                { weight: "80 kg", reps: "8 reps" },
+                            ],
+                            
+                        },
+                        {
+                            name: "Bench Press",
+                            sets: [
+                                { weight: "80 kg", reps: "8 reps" },
+                                { weight: "80 kg", reps: "8 reps" },
+                                { weight: "80 kg", reps: "8 reps" },
+                            ],
+                            
+                        },
+                        {
+                            name: "Bench Press",
+                            sets: [
+                                { weight: "80 kg", reps: "8 reps" },
+                                { weight: "80 kg", reps: "8 reps" },
+                                { weight: "80 kg", reps: "8 reps" },
+                            ],
+                            
                         },
                     ],
                 },
@@ -100,33 +146,37 @@
         />
     </div>
 
-    <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-2">
         {#each pastWorkoutsData as week}
-            <div class="collapse collapse-arrow bg-base-200 rounded-box border border-base-300">
+            <div class="collapse collapse-arrow bg-base-300 rounded-box border border-base-content/10">
                 <input type="checkbox" checked />
                 <div class="collapse-title font-semibold text-lg">
                     {week.weekLabel}
                 </div>
                 <div class="collapse-content flex flex-col gap-4 pt-2">
                     {#each week.workouts as workout}
-                        <div class="bg-base-100 rounded-box border border-base-200 overflow-hidden shadow-sm">
-                            <div class="p-4 sm:px-6 flex justify-between items-center border-b border-base-200 bg-base-100">
-                                <div class="flex items-center gap-4">
+                        <div class="bg-base-100 rounded-box border border-base-content/10 overflow-hidden shadow-sm">
+                            <div class="p-4 sm:px-6 flex items-start border-b border-base-200 bg-base-100 w-full min-w-0">
+                                <div class="flex items-start gap-4 min-w-0 w-full">
                                     <div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
                                         <Icon name="fitness_center" />
                                     </div>
-                                    <div class="flex flex-col">
-                                        <h3 class="font-bold text-base-content m-0 leading-tight">
+                                    <div class="flex flex-col min-w-0 flex-1 pt-0.5">
+                                        
+                                        <h3 class="font-bold text-base-content m-0 leading-tight wrap-break-words">
                                             {workout.name}
+                                            {#if workout.status === "Completed"}
+                                                <span class="inline-flex align-middle ml-1.5">
+                                                    <Icon name="check_circle" className="text-success text-[18px]" />
+                                                </span>
+                                            {/if}
                                         </h3>
-                                        <span class="text-xs font-medium text-base-content/60">
+                                        
+                                        <span class="text-xs font-medium text-base-content/60 wrap-break-words mt-1">
                                             {workout.date} · {workout.exercises.length} exercises
                                         </span>
                                     </div>
                                 </div>
-                                <span class="badge badge-soft badge-success px-3 py-1 font-medium">
-                                    {workout.status}
-                                </span>
                             </div>
 
                             <div class="p-4 sm:px-6 flex flex-col gap-8 bg-base-100">

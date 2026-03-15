@@ -141,7 +141,7 @@
 </script>
 
 <div class="flex flex-col gap-2">
-    <div class="flex flex-col md:flex-row gap-4 pb-">
+    <div class="flex flex-col md:flex-row gap-4 pb-2">
         <div class="flex flex-wrap gap-4 w-full md:w-fit">
             <DateInput
                 placeholder="Start Date"
@@ -159,7 +159,7 @@
 
     <div class="flex flex-col gap-4">
         {#each pastMealsData as week}
-            <div class="collapse collapse-arrow bg-base-200 rounded-box">
+            <div class="collapse collapse-arrow bg-base-300 border border-base-content/10 rounded-box">
                 <input type="checkbox" checked />
                 <div class="collapse-title font-semibold text-lg">{week.weekLabel}</div>
                 <div class="collapse-content flex flex-col gap-8 pt-2">

@@ -34,7 +34,7 @@
         {/each}
     </div>
 
-    <div role="tabpanel" class="mt-4 bg-base-300 p-5 rounded-2xl">
+    <div role="tabpanel" class="mt-4 bg-base-300 py-5 px-2 rounded-2xl">
         {@render children?.()}
     </div>
 </div>
