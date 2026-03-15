@@ -1,4 +1,5 @@
 <script>
+    import Icon from "$lib/components/Icon.svelte";
     import TextInput from "$lib/components/TextInput.svelte";
     import ClientCard from "$lib/components/Trainer/Clients/ClientCard.svelte";
 </script>
@@ -6,11 +7,11 @@
 <div class="flex flex-col gap-3">
 
     <h1>My Clients</h1>
-    <TextInput 
-        label="Search"
-        type="email"
+    <TextInput
         placeholder="Type name or workout type..."
-        />
+    >
+        <Icon name="search" className="text-base-content/30 text-[16px]!"/>   
+    </TextInput>
     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
         <ClientCard
             name="Jane Doe"
